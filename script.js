@@ -5,6 +5,9 @@ let btn = document.querySelector(".btn")
 let emailerror =  document.querySelector(".emailerror")
 let passworderror = document.querySelector(".passworderror")
 let passrepeat = document.querySelector(".passrepeat")
+let btnp = document.querySelector(".btnp")
+let btnrept = document.querySelector(".btnrept")
+
 
 let emailregex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -29,14 +32,7 @@ btn.addEventListener("click",function() {
           passworderror.innerHTML = " "
      }
 
-     // repeatpassword
-     // 
-     // } else if(!repeat.value == email.value){
-     //      passrepeat.innerHTML = " email formate thik nai"
-     // }
-     // else{
-     //      passrepeat.innerHTML = " "
-     // }
+     
 
      if(repeat.value == ""){
           passrepeat.innerHTML = "please repeat your password"
@@ -44,8 +40,29 @@ btn.addEventListener("click",function() {
      }
       else if(password.value == repeat.value){
           passrepeat.innerHTML = "password match "
+          
      }else{
-          passrepeat.innerHTML = "dont password match "
+          passrepeat.innerHTML = "dont match password  "
      }
      
+})
+
+btnp.addEventListener("click",function(){
+     if(password.type == "password"){
+          password.type = "text"
+          btnp.innerHTML = "Hide"
+     }else{
+          password.type ="password"
+          btnp.innerHTML = "Show"
+     }
+})
+
+btnrept.addEventListener("click",function(){
+     if(repeat.type == "password"){
+          repeat.type = "text"
+          btnrept.innerHTML = "Hide"
+     }else{
+          repeat.type ="password"
+          btnrept .innerHTML = "Show"
+     }
 })
